@@ -1,7 +1,6 @@
 package ru.job4j.oop;
 
-public class Error{
-
+public class Error {
 
     private boolean active;
 
