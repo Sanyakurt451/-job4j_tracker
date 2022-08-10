@@ -8,19 +8,18 @@ public class Error {
 
     private String message;
 
-    public Error() {
+    public Error(boolean active, int status, String message) {
+        this.active = active;
+        this.status = status;
+        this.message = message;
+    }
 
+    public Error() {
     }
 
     public static void main(String[] args) {
         Error error = new Error(true, 25, "Онлайн");
         error.printInfo();
-    }
-
-    public Error(boolean active, int status, String message) {
-        this.active = active;
-        this.status = status;
-        this.message = message;
     }
 
     public void printInfo() {
