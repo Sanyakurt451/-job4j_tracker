@@ -18,7 +18,7 @@ public class Error {
     }
 
     public static void main(String[] args) {
-        Error error = new Error(true, 25, "Онлайн");
+        Error error = new Error(true, 27, "Онлайн");
         error.printInfo();
     }
 
