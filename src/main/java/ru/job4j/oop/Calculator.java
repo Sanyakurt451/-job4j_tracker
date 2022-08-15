@@ -9,7 +9,7 @@ public class Calculator {
     }
 
     public static int minus(int z) {
-        return x - z;
+        return z - x;
     }
 
     public static int divide(int b) {
@@ -28,19 +28,13 @@ public class Calculator {
         int result = Calculator.sum(10);
         System.out.println(result);
 
-        Calculator calculator1 = new Calculator();
+        Calculator calculator = new Calculator();
         int rsl = Calculator.multiply(5);
         System.out.println(rsl);
-
-        Calculator calculator2 = new Calculator();
         int result1 = Calculator.minus(1);
         System.out.println(result1);
-
-        Calculator calculator3 = new Calculator();
         int result2 = Calculator.divide(5);
         System.out.println(result2);
-
-        Calculator calculator4 = new Calculator();
         int result4 = Calculator.sumAllOperation(result);
         System.out.println(result4);
     }
