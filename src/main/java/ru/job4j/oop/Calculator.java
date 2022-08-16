@@ -12,15 +12,15 @@ public class Calculator {
         return z - x;
     }
 
-    public static int divide(int b) {
+    public int divide(int b) {
         return b / x;
     }
 
-    public static int multiply(int a) {
+    public int multiply(int a) {
         return x * a;
     }
 
-    public static int sumAllOperation(int f) {
+    public int sumAllOperation(int f) {
         return sum(f) + minus(f) + divide(f) + multiply(f);
     }
 
@@ -29,13 +29,13 @@ public class Calculator {
         System.out.println(result);
 
         Calculator calculator = new Calculator();
-        int rsl = Calculator.multiply(5);
+        int rsl = calculator.multiply(5);
         System.out.println(rsl);
-        int result1 = Calculator.minus(1);
+        int result1 = calculator.minus(1);
         System.out.println(result1);
-        int result2 = Calculator.divide(5);
+        int result2 = calculator.divide(5);
         System.out.println(result2);
-        int result4 = Calculator.sumAllOperation(result);
+        int result4 = calculator.sumAllOperation(result);
         System.out.println(result4);
     }
 }
