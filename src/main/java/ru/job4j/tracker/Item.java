@@ -16,18 +16,6 @@ public class Item {
     public Item() {
     }
 
-    public void printInfo() {
-        System.out.println(name);
-        System.out.println(id);
-    }
-
-    public static void main(String[] args) {
-        Item first = new Item();
-        first.printInfo();
-        Item second = new Item("Privet", 20);
-        second.printInfo();
-    }
-
     public int getId() {
         return id;
     }
