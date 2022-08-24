@@ -36,7 +36,7 @@ public class Tracker {
     public boolean delete(int id) {
         int start = indexOf(id) + 1;
         int distPos = indexOf(id);
-        int length = size - indexOf(id) - 1;;
+        int length = size - indexOf(id) - 1;
         items[size - 1] = null;
         System.arraycopy(items, start, items, distPos, length);
         size--;
