@@ -30,7 +30,7 @@ public class Tracker {
             item.setId(id);
             items[index] = item;
         }
-        return false;
+        return true;
     }
 
     public boolean delete(int id) {
