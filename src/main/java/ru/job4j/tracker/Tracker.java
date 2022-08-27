@@ -37,17 +37,12 @@ public class Tracker {
     public boolean delete(int id) {
         int index = indexOf(id);
         boolean rsl = index != -1;
-        Item item = new Item();
         if (rsl) {
-            items[index] = item;
-        }
-        if (index != -1) {
             System.arraycopy(items, index + 1, items, index, size - index - 1);
             items[size - 1] = null;
             size--;
-            return true;
         }
-        return false;
+        return rsl;
     }
 
     public Item findById(int id) {
