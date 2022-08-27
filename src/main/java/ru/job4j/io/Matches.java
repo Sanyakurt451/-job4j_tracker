@@ -13,23 +13,17 @@ public class Matches {
             System.out.println(player + " введите число от 1 до 3:");
             int matches = Integer.parseInt(input.nextLine());
             turn = !turn;
-
-            if (matches < 1 || matches > 3 || matches > count) {
-                System.out.println("Ошибка");
-            } else if (matches == 1) {
-                count = count - 1;
-                System.out.println("Спичек осталось " + count + " на столе");
-            } else if (matches == 2) {
-                count = count - 2;
-                System.out.println("Спичек осталось " + count + " на столе");
-            } else if (matches == 3) {
-                count = count - 3;
-                System.out.println("Спичек осталось " + count + " на столе");
-            }
             if (!turn) {
                 System.out.println("Выиграл первый игрок");
             } else {
                 System.out.println("Выиграл второй игрок");
+            }
+            if (matches < 1 || matches > 3 || matches > count) {
+                System.out.println("Ошибка");
+            } else {
+                turn = !turn;
+                count = count - matches;
+                System.out.println("Спичек осталось " + count + " на столе");
             }
         }
     }
