@@ -4,7 +4,7 @@ public interface Transport {
 
     String drive();
 
-    int passengers(int number);
+    int passengers();
 
     double fuel(double amount);
 }
