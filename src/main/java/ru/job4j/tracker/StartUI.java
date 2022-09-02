@@ -1,18 +1,66 @@
 package ru.job4j.tracker;
 
 public class StartUI {
+
+    public static void createItem(Input input, Tracker tracker) {
+        System.out.println("=== Create a new Item ===");
+        String name = input.askStr("Enter name: ");
+        Item item = new Item(name);
+        tracker.add(item);
+        System.out.println("Добавленная заявка: " + item);
+    }
+
+    public static void showAllItems(Input input, Tracker tracker) {
+        System.out.println("=== Show all items ===");
+        Item[] items = tracker.findAll();
+        System.out.println("Хранилище содержит заявки" + items);
+    }
+
+    public static void editItem(Input input, Tracker tracker) {
+        System.out.println("=== Edit item ===");
+        int id = input.askInt("Enter your ID");
+        String name = input.askStr("Enter name: ");
+        Item item = new Item(name);
+        tracker.replace(id, item);
+        System.out.println("Заявка изменена успешно.");
+    }
+
+    public static void deteleItem(Input input, Tracker tracker) {
+        System.out.println("=== Delete item ===");
+        int id = input.askInt("Enter your ID");
+        tracker.delete(id);
+        System.out.println("Заявка удалена успешно.");
+    }
+
+    public static void findItemById(Input input, Tracker tracker) {
+        System.out.println("=== Find item by id ===");
+        int id = input.askInt("Enter your ID");
+        Item item = tracker.findById(id);
+        tracker.findById(id);
+        System.out.println("Заявка с введенным id: " + item + " найдена.");
+    }
+
+    public static void findItemsByName(Input input, Tracker tracker) {
+        System.out.println("=== Find items by name ===");
+        String name = input.askStr("Enter name: ");
+        Item[] items = tracker.findByName(name);
+        System.out.println("Заявки с именем: " + items + " найдены.");
+    }
+
     public void init(Input input, Tracker tracker) {
         boolean run = true;
         while (run) {
             showMenu();
             int select = input.askInt("Select: ");
             if (select == 0) {
+                StartUI.createItem(input, tracker);
                 System.out.println("=== Create a new Item ===");
                 String name = input.askStr("Enter name: ");
                 Item item = new Item(name);
                 tracker.add(item);
                 System.out.println("Добавленная заявка: " + item);
             } else if (select == 1) {
+                StartUI.showAllItems(input, tracker);
                 System.out.println("=== Show all items ===");
                 Item[] items = tracker.findAll();
                 if (items.length > 0) {
@@ -23,6 +71,7 @@ public class StartUI {
                     System.out.println("Хранилище еще не содержит заявок");
                 }
             } else if (select == 2) {
+                StartUI.editItem(input, tracker);
                 System.out.println("=== Edit item ===");
                 int id = input.askInt("Enter your ID");
                 String name = input.askStr("Enter name: ");
@@ -33,6 +82,7 @@ public class StartUI {
                     System.out.println("Ошибка замены заявки.");
                 }
             } else if (select == 3) {
+                StartUI.deteleItem(input, tracker);
                 System.out.println("=== Delete item ===");
                 int id = input.askInt("Enter your ID");
                 if (tracker.delete(id)) {
@@ -41,6 +91,7 @@ public class StartUI {
                     System.out.println("Ошибка удаления заявки.");
                 }
             } else if (select == 4) {
+                StartUI.findItemById(input, tracker);
                 System.out.println("=== Find item by id ===");
                 int id = input.askInt("Enter your ID");
                 Item item = tracker.findById(id);
@@ -50,6 +101,7 @@ public class StartUI {
                     System.out.println("Заявка с введенным id: " + id + " не найдена.");
                 }
             } else if (select == 5) {
+                StartUI.findItemsByName(input, tracker);
                 System.out.println("=== Find items by name ===");
                 String name = input.askStr("Enter name: ");
                 Item[] items = tracker.findByName(name);
