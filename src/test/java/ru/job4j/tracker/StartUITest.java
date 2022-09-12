@@ -114,8 +114,9 @@ public class StartUITest {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
         Item one = tracker.add(new Item("test1"));
+        String name = "test2";
         Input in = new StubInput(
-                new String[] {"0", String.valueOf(one.getId()), "1"}
+                new String[] {"0", name, "1"}
         );
         UserAction[] actions = new UserAction[]{
                 new FindByNameAction(out),
@@ -128,7 +129,7 @@ public class StartUITest {
                         + "0. Find items by name" + ln
                         + "1. Exit Program" + ln
                         + "=== Find items by name ===" + ln
-                        + "The applications 1 haven't been found." + ln
+                        + "The applications test2 haven't been found." + ln
                         + "Menu:" + ln
                         + "0. Find items by name" + ln
                         + "1. Exit Program" + ln
