@@ -21,6 +21,10 @@ public class FindEl {
             indexOf(rsl, "founy");
         } catch (ElementNotFoundException e) {
             e.printStackTrace();
-        }
+        } catch (Exception e) {
+        e.printStackTrace();
+        } catch (Throwable th) {
+        th.printStackTrace();
+      }
     }
 }
