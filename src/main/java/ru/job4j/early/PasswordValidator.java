@@ -12,9 +12,6 @@ public class PasswordValidator {
         if (pass.length() < 8) {
             throw new IllegalArgumentException("less than 8");
         }
-        if (pass.length() < 32) {
-            throw new IllegalArgumentException("less than 32");
-        }
         return pass;
     }
 }
